@@ -1,40 +1,40 @@
 # DBDataToHBase
-¹ØÏµĞÍÊı¾İ¿âÖĞµÄÊı¾İÍ¬²½ÖÁHBase;
+å…³ç³»å‹æ•°æ®åº“ä¸­çš„æ•°æ®åŒæ­¥è‡³HBase;
 
-### Ê¹ÓÃBoneCP×÷ÎªÊı¾İ¿âÁ¬½Ó³Ø¡£²âÊÔ¹ıOracleÊı¾İ¿âÍ¬²½ÖÁHbase£¬ÀíÂÛÉÏÓ¦¸ÃÖ§³ÖËùÓĞ¹ØÏµĞÍÊı¾İ¿â£¨ÀıÈç£ºmysql¡¢sqlserverµÈ£©¡£
+### ä½¿ç”¨BoneCPä½œä¸ºæ•°æ®åº“è¿æ¥æ± ã€‚æµ‹è¯•è¿‡Oracleæ•°æ®åº“åŒæ­¥è‡³Hbaseï¼Œç†è®ºä¸Šåº”è¯¥æ”¯æŒæ‰€æœ‰å…³ç³»å‹æ•°æ®åº“ï¼ˆä¾‹å¦‚ï¼šmysqlã€sqlserverç­‰ï¼‰ã€‚
 
 
-ÊµÏÖÔ­Àí
+å®ç°åŸç†
 ---------------------------------
-	1¡¢¼ÓÔØ²¢½âÎöhbase-site.xmlºÍ×Ô¶¨ÒåyamlÅäÖÃÎÄ¼ş
-	2¡¢´´½¨HBaseConnection¡¢JDBC connectionPool
-	3¡¢Ñ­»·×Ô¶¨ÒåyamlÅäÖÃhbase.table£»ÑéÖ¤ÅäÖÃ£»
-	4¡¢»ñÈ¡µ±Ç°Ñ­»·±íµÄ×î´ó¡¢×îĞ¡ID
-	5¡¢¸ù¾İÅäÖÃ¡¢±íid×Ô¶¯Æ½¾ù·ÖÅäÏß³Ì´ÓÊı¾İ¿âÖĞÀ­È¥Êı¾İ
-	6¡¢Ïß³Ì³Ø¹ÜÀíÏß³Ì£¬ÅúÁ¿µ¼Èëhbase
-	7¡¢ÇåÀí¼¯ºÏÊı¾İ£»¹Ø±ÕÏß³Ì³Ø£»µ¼ÈëÍê³É£»
+	1ã€åŠ è½½å¹¶è§£æhbase-site.xmlå’Œè‡ªå®šä¹‰yamlé…ç½®æ–‡ä»¶
+	2ã€åˆ›å»ºHBaseConnectionã€JDBC connectionPool
+	3ã€å¾ªç¯è‡ªå®šä¹‰yamlé…ç½®hbase.tableï¼›éªŒè¯é…ç½®ï¼›
+	4ã€è·å–å½“å‰å¾ªç¯è¡¨çš„æœ€å¤§ã€æœ€å°ID
+	5ã€æ ¹æ®é…ç½®ã€è¡¨idè‡ªåŠ¨å¹³å‡åˆ†é…çº¿ç¨‹ä»æ•°æ®åº“ä¸­æ‹‰å»æ•°æ®
+	6ã€çº¿ç¨‹æ± ç®¡ç†çº¿ç¨‹ï¼Œæ‰¹é‡å¯¼å…¥hbase
+	7ã€æ¸…ç†é›†åˆæ•°æ®ï¼›å…³é—­çº¿ç¨‹æ± ï¼›å¯¼å…¥å®Œæˆï¼›
 
 
-²âÊÔ
+æµ‹è¯•
 ------------------------------------------------
-13WÊı¾İ£¬6¸ö×Ö¶Î20ÃëÄÚÍê³É¡£»¹Ëã¿ÉÒÔ½ÓÊÜ£»13WÊı¾İ£¬24¸ö×Ö¶Î50Ãë×óÓÒÍê³É¡£
+13Wæ•°æ®ï¼Œ6ä¸ªå­—æ®µ20ç§’å†…å®Œæˆã€‚è¿˜ç®—å¯ä»¥æ¥å—ï¼›13Wæ•°æ®ï¼Œ24ä¸ªå­—æ®µ50ç§’å·¦å³å®Œæˆã€‚
 	  
-2000ÌõÌá½»Ò»´ÎÖÁHBase£¬ºÄÊ±0.6Ãë×óÓÒ£»10000ÌõÌá½»Ò»´ÎÖÁHBase£¬ºÄÊ±1.6Ãë×óÓÒ¡£
+2000æ¡æäº¤ä¸€æ¬¡è‡³HBaseï¼Œè€—æ—¶0.6ç§’å·¦å³ï¼›10000æ¡æäº¤ä¸€æ¬¡è‡³HBaseï¼Œè€—æ—¶1.6ç§’å·¦å³ã€‚
 
-oracle±íÖĞ6380WÊı¾İ¹²30¸ö×Ö¶Î¡£¹²¿ªÆô340¸öÏß³Ì£¬²¢ĞĞÖ´ĞĞ10¸öÏß³Ì£¬Ã¿¸öÏß³Ì´¦Àí20WÊı¾İ¡£
+oracleè¡¨ä¸­6380Wæ•°æ®å…±30ä¸ªå­—æ®µã€‚å…±å¼€å¯340ä¸ªçº¿ç¨‹ï¼Œå¹¶è¡Œæ‰§è¡Œ10ä¸ªçº¿ç¨‹ï¼Œæ¯ä¸ªçº¿ç¨‹å¤„ç†20Wæ•°æ®ã€‚
 
-È±µã£º
+ç¼ºç‚¹ï¼š
 -----------------------------------------------
-- ÔİÊ±²»Ö§³ÖHBase¶àÁĞ×å¡£
-- ½öÖ§³Öµ¥½ÚµãÔËĞĞ£¬ĞÔÄÜÓësqoopÏà²îºÜ¶à¡£
+- æš‚æ—¶ä¸æ”¯æŒHBaseå¤šåˆ—æ—ã€‚
+- ä»…æ”¯æŒå•èŠ‚ç‚¹è¿è¡Œï¼Œæ€§èƒ½ä¸sqoopç›¸å·®å¾ˆå¤šã€‚
 
 
-yamlÅäÖÃÊ¾Àı£º
+yamlé…ç½®ç¤ºä¾‹ï¼š
 -----------------------------------------
 ``` java
-#HBaseµØÖ·
+#HBaseåœ°å€
 hbase.master: 192.168.1.248:60000
-#JBDCÁ¬½ÓÅäÖÃ£¬Ê¹ÓÃBoneCP×÷ÎªÁ¬½Ó³Ø
+#JBDCè¿æ¥é…ç½®ï¼Œä½¿ç”¨BoneCPä½œä¸ºè¿æ¥æ± 
 hbase.connection:
   enable: true
   driver: oracle.jdbc.driver.OracleDriver
@@ -44,19 +44,19 @@ hbase.connection:
   maxPoolSize: 30
   minPoolSize: 5
 hbase.table:
-  #hbaseÖĞµÄ±íÃû£¬±ØÊäÏî
+  #hbaseä¸­çš„è¡¨åï¼Œå¿…è¾“é¡¹
  - table.name: organizations
-  #ÊÇ·ñÆôÓÃ¸ÃÅäÖÃ£¬Ä¬ÈÏfalse
+  #æ˜¯å¦å¯ç”¨è¯¥é…ç½®ï¼Œé»˜è®¤false
    enable: true
-  #hbaseÖĞµÄnamespace£¬Ä¬ÈÏ£ºdefault
+  #hbaseä¸­çš„namespaceï¼Œé»˜è®¤ï¼šdefault
    table.nameSpace: scgrid
-   #ÊÇ·ñ´ÓÊı¾İ¿âÖĞµ¼Èë¼ÍÂ¼µ½hbase,Ä¬ÈÏ£ºfalse
+   #æ˜¯å¦ä»æ•°æ®åº“ä¸­å¯¼å…¥çºªå½•åˆ°hbase,é»˜è®¤ï¼šfalse
    table.fromDB: true
-   #Èç¹ûbaseÖĞ´æÔÚ±í£¬ÊÇ·ñÉ¾±í£¬Ä¬ÈÏ£ºfalse
+   #å¦‚æœbaseä¸­å­˜åœ¨è¡¨ï¼Œæ˜¯å¦åˆ è¡¨ï¼Œé»˜è®¤ï¼šfalse
    table.existsIsDelete: false
-   #Êı¾İ¿â±íÃû£¬Ä¬ÈÏ£ºÓëhbaseÖĞ±íÃûÏàÍ¬
+   #æ•°æ®åº“è¡¨åï¼Œé»˜è®¤ï¼šä¸hbaseä¸­è¡¨åç›¸åŒ
 #   table.dbTableName: organizations
-   #ĞèÒªµ¼³öµÄÁĞ£¬Ä¬ÈÏµ¼³öÈ«²¿ÁĞ
+   #éœ€è¦å¯¼å‡ºçš„åˆ—ï¼Œé»˜è®¤å¯¼å‡ºå…¨éƒ¨åˆ—
 #   table.column: [id, parentfunorgid, parentid, orgtype, orglevel, subcount]
 #   table.column: [id, parentfunorgid, parentid, orgtype, orglevel, subcount, seq, maxcode, subcountfun, departmentno, orgname, contactway, orginternalcode, simplepinyin, fullpinyin, remark, createuser, buildingid, centerx, centery, updateuser, updatedate, createdate, functionalorgtype]
  - table.name: propertydomain
