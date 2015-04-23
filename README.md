@@ -32,9 +32,9 @@ oracle表中6380W数据共30个字段。共开启340个线程，并行执行10�
 yaml配置示例：
 -----------------------------------------
 ``` java
-#HBase地址
+#HBase address
 hbase.master: 192.168.1.248:60000
-#JBDC连接配置，使用BoneCP作为连接池
+#JBDC connection config，use BoneCP pool
 hbase.connection:
   enable: true
   driver: oracle.jdbc.driver.OracleDriver
@@ -44,19 +44,19 @@ hbase.connection:
   maxPoolSize: 30
   minPoolSize: 5
 hbase.table:
-  #hbase中的表名，必输项
+  #hbase's table name，required
  - table.name: organizations
-  #是否启用该配置，默认false
+  #is enable this config，default false
    enable: true
-  #hbase中的namespace，默认：default
+  #hbase's namespace, default: default
    table.nameSpace: scgrid
-   #是否从数据库中导入纪录到hbase,默认：false
+   #from database to hbase? default: false
    table.fromDB: true
-   #如果base中存在表，是否删表，默认：false
+   #if HBase has table, delete is? default：false
    table.existsIsDelete: false
-   #数据库表名，默认：与hbase中表名相同
+   #database table name, default: same as hbase's
 #   table.dbTableName: organizations
-   #需要导出的列，默认导出全部列
+   #need export column，default: all column
 #   table.column: [id, parentfunorgid, parentid, orgtype, orglevel, subcount]
 #   table.column: [id, parentfunorgid, parentid, orgtype, orglevel, subcount, seq, maxcode, subcountfun, departmentno, orgname, contactway, orginternalcode, simplepinyin, fullpinyin, remark, createuser, buildingid, centerx, centery, updateuser, updatedate, createdate, functionalorgtype]
  - table.name: propertydomain
