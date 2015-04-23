@@ -1,0 +1,46 @@
+#-----------------------------------
+#HBase 工具配置文件        2015-04-21    |
+#author: wsmalltiger@163.com       |
+#-----------------------------------
+#HBase地址
+hbase.master: 192.168.1.248:60000
+#JBDC连接配置，使用BoneCP作为连接池
+hbase.connection:
+  enable: true
+  driver: oracle.jdbc.driver.OracleDriver
+  connUrl: "jdbc:oracle:thin:@192.168.1.2:1521:oracl"
+  userName: demo
+  password: demo
+  maxPoolSize: 30
+  minPoolSize: 5
+hbase.table:
+ - table.name: propertydomain
+   enable: false
+   table.fromDB: true
+   table.existsIsDelete: false
+   table.dbTableName: propertydomains
+   table.column: [id, domainname, systemsensitive]
+ - table.name: demoColumnWxh
+   enable: false
+   table.column: [["col:id", "col:name"], ["col2:sex", "col2:birthday"]]
+ - table.name: baseinfo
+   enable: false
+   table.nameSpace: scgrid
+   table.existsIsDelete: false
+   table.fromDB: true
+#   table.column: [id, namefullpinyin, simplepinyin, usedname, idcardno, telephone, mobilenumber, birthday, gender, workunit, imgurl, email, isdeath, nation, politicalbackground, schooling, career, maritalstate, bloodtype, faith, stature, province, city, district, nativeplaceaddress, nativepolicestation, createuser, updateuser, createdate, updatedate]
+  #hbase中的表名，必输项
+ - table.name: organizations
+  #是否启用该配置，默认false
+   enable: true
+  #hbase中的namespace，默认：default
+   table.nameSpace: scgrid
+   #是否从数据库中导入纪录到hbase,默认：false
+   table.fromDB: true
+   #如果base中存在表，是否删表，默认：false
+   table.existsIsDelete: false
+   #数据库表名，默认：与hbase中表名相同
+#   table.dbTableName: organizations
+   #需要导出的列，默认导出全部列
+#   table.column: [id, parentfunorgid, parentid, orgtype, orglevel, subcount]
+#   table.column: [id, parentfunorgid, parentid, orgtype, orglevel, subcount, seq, maxcode, subcountfun, departmentno, orgname, contactway, orginternalcode, simplepinyin, fullpinyin, remark, createuser, buildingid, centerx, centery, updateuser, updatedate, createdate, functionalorgtype]
