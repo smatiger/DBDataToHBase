@@ -72,3 +72,11 @@ hbase.table:
    table.fromDB: true
 #   table.column: [id, namefullpinyin, simplepinyin, usedname, idcardno, telephone, mobilenumber, birthday, gender, workunit, imgurl, email, isdeath, nation, politicalbackground, schooling, career, maritalstate, bloodtype, faith, stature, province, city, district, nativeplaceaddress, nativepolicestation, createuser, updateuser, createdate, updatedate]
 ``` 
+
+其他说明：
+--------------------------------------
+ - 自动生成的HBase表自动名称都是大写的，列族名称为：columnFamily1（可在HBaseContants.DEFAULT_HBASE_TABLE_COLUMN_FAMILY_NAME常量配置）。
+ - 数据量越大，效率会有明显下降。
+ - 代码用了2天闲暇时间写的雏形，可优化升级的地方还比较多。
+ - 有任何意见或建议欢迎反馈！wsmalltiger@163.com
+ - Q群：58156559  欢迎技术交流探讨
